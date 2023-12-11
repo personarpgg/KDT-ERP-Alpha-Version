@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel</title>
+</head>
+<body>
+  <h1>Admin Panel</h1>
+  <div id="jsonData"></div>
+
+  <script>
+    // JSON 데이터를 불러와 화면에 출력
+    fetch('/admin')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('jsonData').innerText = JSON.stringify(data, null, 2);
+      })
+      .catch(error => console.error('Error:', error));
+  </script>
+</body>
+</html>
