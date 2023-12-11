@@ -6,15 +6,20 @@
   <title>JSON Handling System</title>
 </head>
 <body>
+  <!-- 데이터를 전송할 폼입니다. -->
   <form id="dataForm" action="/" method="post">
     <label for="inputData">Input Data:</label>
+    <!-- 사용자가 입력한 데이터를 받는 입력 필드입니다. -->
     <input type="text" id="inputData" name="inputData" required>
+    <!-- 폼을 제출하는 버튼입니다. -->
     <input type="submit" value="Submit">
   </form>
 
+  <!-- 데이터를 조회하는 버튼입니다. -->
   <button id="viewDataButton">View Data</button>
 
   <script>
+    // "View Data" 버튼이 클릭되면 /admin 경로로 이동하는 이벤트 리스너입니다.
     document.getElementById('viewDataButton').addEventListener('click', function () {
       window.location.href = '/admin';
     });
