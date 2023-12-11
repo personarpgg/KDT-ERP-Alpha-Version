@@ -6,17 +6,21 @@
   <title>Admin Panel</title>
 </head>
 <body>
+  <!-- 관리자 패널의 제목 -->
   <h1>Admin Panel</h1>
+
+  <!-- JSON 데이터를 표시할 공간 -->
   <div id="jsonData"></div>
 
   <script>
-    // JSON 데이터를 불러와 화면에 출력
+    // 서버로부터 JSON 데이터를 비동기적으로 불러와 처리
     fetch('/admin')
-      .then(response => response.json())
+      .then(response => response.json())  // HTTP 응답을 JSON으로 변환
       .then(data => {
+        // 불러온 JSON 데이터를 화면에 출력, 들여쓰기 및 가독성을 위해 JSON.stringify의 두 번째 인자 활용
         document.getElementById('jsonData').innerText = JSON.stringify(data, null, 2);
       })
-      .catch(error => console.error('Error:', error));
+      .catch(error => console.error('Error:', error));  // 에러 발생 시 콘솔에 에러 메시지 출력
   </script>
 </body>
 </html>
